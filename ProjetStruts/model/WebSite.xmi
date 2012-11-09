@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<metawebmodel:WebSite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metawebmodel="http://metawebmodel/1.0" xsi:schemaLocation="http://metawebmodel/1.0 MetaWebModel.ecore" name="AligatorEggs">
+  <controllers controledViews="//@vues.0" model="//@models.0"/>
+  <models>
+    <dao>
+      <dataBase name="NorthWind" url="https://mywebsite.com:8080/notthwind" userName="admin" password="password">
+        <tables name="Customers">
+          <Rows>
+            <content column="//@models.0/@dao.0/@dataBase.0/@tables.0/@columns.0" value="14552"/>
+            <content column="//@models.0/@dao.0/@dataBase.0/@tables.0/@columns.1" value="Marc"/>
+            <content column="//@models.0/@dao.0/@dataBase.0/@tables.0/@columns.2" value="passwordmd5"/>
+          </Rows>
+          <columns Type="Integer" Nom="id"/>
+          <columns Type="varchar(30)" Nom="name"/>
+          <columns Type="varchar(30)" Nom="password"/>
+        </tables>
+      </dataBase>
+      <managedEntities nom="CustomerEntity">
+        <atributes name="Name">
+          <type href="DataType.xmi#/"/>
+        </atributes>
+        <atributes name="Password">
+          <type href="DataType.xmi#/"/>
+        </atributes>
+      </managedEntities>
+    </dao>
+  </models>
+  <vues model="//@models.0">
+    <pages head="&lt;head>head&lt;/head>" name="index.html">
+      <formulaire action="doAddDocument.action">
+        <fields>
+          <input inputType="Text" name="Name" value="&quot;&quot;"/>
+          <label value="Customer Name :"/>
+        </fields>
+        <fields>
+          <input inputType="Password" name="Password" value="&quot;&quot;"/>
+          <label value="Password : "/>
+        </fields>
+        <fields>
+          <input name="btLogin" value="Login"/>
+        </fields>
+      </formulaire>
+      <css href="CSS.xmi#/"/>
+    </pages>
+  </vues>
+</metawebmodel:WebSite>
