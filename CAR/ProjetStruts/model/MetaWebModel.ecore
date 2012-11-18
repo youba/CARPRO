@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metawebmodel" nsURI="http://metawebmodel/1.0" nsPrefix="metawebmodel">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metawebmodel"
+    nsURI="http://metawebmodel/1.0" nsPrefix="metawebmodel">
   <eClassifiers xsi:type="ecore:EClass" name="WebSite">
     <eStructuralFeatures xsi:type="ecore:EReference" name="models" lowerBound="1"
         upperBound="-1" eType="#//Model" containment="true"/>
@@ -35,7 +37,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//Method"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
         eType="#//Action" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionto" lowerBound="1"
         eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Content">

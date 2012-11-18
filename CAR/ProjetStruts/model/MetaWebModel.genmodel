@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ProjetStruts/src"
+    modelPluginID="ProjetStruts" modelName="MetaWebModel" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject"
+    rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" reflectiveDelegation="true"
+    importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>MetaWebModel.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Metawebmodel" disposableProviderFactory="true" ecorePackage="MetaWebModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MetaWebModel.ecore#//InputType">
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Submit"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/CheckBox"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/RadioButton"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Select"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Option"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/TextArea"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Password"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Email"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Reset"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//InputType/Text"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MetaWebModel.ecore#//Method">
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//Method/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//Method/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="MetaWebModel.ecore#//Method/PUT"/>
+    </genEnums>
+    <genClasses ecoreClass="MetaWebModel.ecore#//WebSite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//WebSite/models"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//WebSite/vues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//WebSite/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//View">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//View/pages"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Model/entities"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Entity/atributes"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Page">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Page/htmlContent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Page/head"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Page/css"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Page/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Page/formulaire"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Form">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Form/fields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Form/method"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Form/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Form/actionto"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Content">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Content/htmlText"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Field">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Field/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Field/label"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Input/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Input/inputType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Input/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Label/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//CSS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//CSS/content"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//EntityAtribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//EntityAtribute/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//EntityAtribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//DataType/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//FormResultForward">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//FormResultForward/message"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//FormResultForward/forwardedPage"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MetaWebModel.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//Action/actionResultFrorwards"/>
+    </genClasses>
+    <genClasses ecoreClass="MetaWebModel.ecore#//PredifinedDataTypes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MetaWebModel.ecore#//PredifinedDataTypes/types"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

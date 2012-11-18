@@ -612,7 +612,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_lRqjUSqZEeKT382bmekB9Q" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_lRqjUiqZEeKT382bmekB9Q" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="MetaWebModel.ecore#//Form/action.1"/>
+    <element xmi:type="ecore:EReference" href="MetaWebModel.ecore#//Form/actionto"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lRqjUyqZEeKT382bmekB9Q" points="[-10, -8, 97, -164]$[-107, -8, 0, -164]$[-107, 43, 0, -113]$[-107, 148, 0, -8]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lRuNsCqZEeKT382bmekB9Q" id="(0.08270676691729323,0.7254901960784313)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lRuNsSqZEeKT382bmekB9Q" id="(0.75,0.08653846153846154)"/>
