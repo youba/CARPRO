@@ -11,6 +11,7 @@ import metawebmodel.Field;
 import metawebmodel.Form;
 import metawebmodel.MetawebmodelPackage;
 import metawebmodel.Method;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -126,6 +127,15 @@ public class FormImpl extends CDOObjectImpl implements Form {
 	 */
 	public void setActionto(Action newActionto) {
 		eSet(MetawebmodelPackage.Literals.FORM__ACTIONTO, newActionto);
+	}
+
+	@Override
+	/**
+	 * @generated NOT 
+	 */
+	public String accepte(IVisiteur visiteur) {
+		return visiteur.visite(this);
+		
 	}
 
 } //FormImpl

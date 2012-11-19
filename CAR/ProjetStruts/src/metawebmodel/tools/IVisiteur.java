@@ -1,5 +1,6 @@
 package metawebmodel.tools;
 
+import metawebmodel.Content;
 import metawebmodel.Form;
 import metawebmodel.Page;
 import metawebmodel.View;
@@ -15,4 +16,5 @@ public interface IVisiteur {
 	public void visite(View vue);
 	public void visite(Page page);
 	public String visite (Form formulaire);
+	public String visite (Content contenu);
 }

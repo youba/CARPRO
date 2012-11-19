@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import metawebmodel.Content;
 import metawebmodel.Form;
 import metawebmodel.Page;
 import metawebmodel.View;
@@ -52,8 +53,17 @@ public class VisiteurWeb implements IVisiteur {
 							headerGenerer+"\n"+
 							"</head>";
 		
+		String formulaireHTML ="";
+		if(page.getFormulaire()!=null){
+			for(int i=0;i<page.getFormulaire().size();i++){
+				formulaireHTML = "\n"+page.getFormulaire().get(i).accepte(this)+"\n";
+			}
+		}
+		String contenuPage = "\n<body>\n"+page.getHtmlContent().accepte(this)+formulaireHTML+"\n</body>\n";
 		
-		String contenuComplet = beforeHeader+header;
+		String footer = "\n</html:html>\n";
+		String contenuComplet = beforeHeader+header+contenuPage+footer;
+		
 		//Ecriture dans le fichier jsp
 		PrintWriter ecri=null ;
 			try {
@@ -69,8 +79,11 @@ public class VisiteurWeb implements IVisiteur {
 
 	@Override
 	public String visite(Form formulaire) {
-		// TODO Auto-generated method stub
-		return null;
+		return "<form></form>";
+	}
+	
+	public String visite(Content contenu){
+		return contenu.getHtmlText();
 	}
 	
 	

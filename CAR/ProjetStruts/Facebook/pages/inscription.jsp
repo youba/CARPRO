@@ -6,11 +6,13 @@
 
 <html:html>
 <head>
-<title><bean:message key="index"/></title>
+<title><bean:message key="inscription"/></title>
 
 </head>
 <body>
-Hello !
+Ici contenu
+<form></form>
+
 </body>
 
 </html:html>

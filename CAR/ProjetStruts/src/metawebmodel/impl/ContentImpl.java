@@ -8,6 +8,7 @@ package metawebmodel.impl;
 
 import metawebmodel.Content;
 import metawebmodel.MetawebmodelPackage;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -74,4 +75,10 @@ public class ContentImpl extends CDOObjectImpl implements Content {
 		eSet(MetawebmodelPackage.Literals.CONTENT__HTML_TEXT, newHtmlText);
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	public String accepte(IVisiteur visiteur){
+		return visiteur.visite(this);
+	}
 } //ContentImpl

@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 import org.eclipse.emf.common.util.EList;
@@ -128,4 +130,10 @@ public interface Form extends CDOObject {
 	 */
 	void setActionto(Action value);
 
+	/**
+	 * 
+	 * @param visiteur
+	 * @generateur NOT
+	 */
+	public String accepte(IVisiteur visiteur);
 } // Form

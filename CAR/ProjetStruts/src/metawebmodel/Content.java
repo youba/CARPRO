@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 /**
@@ -51,5 +53,13 @@ public interface Content extends CDOObject {
 	 * @generated
 	 */
 	void setHtmlText(String value);
+	
+	/**
+	 * 
+	 * @param visiteur
+	 * @return
+	 * @generated NOT
+	 */
+	public String accepte(IVisiteur visiteur);
 
 } // Content
