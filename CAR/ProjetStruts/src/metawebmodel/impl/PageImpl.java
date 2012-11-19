@@ -11,6 +11,7 @@ import metawebmodel.Content;
 import metawebmodel.Form;
 import metawebmodel.MetawebmodelPackage;
 import metawebmodel.Page;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -137,6 +138,15 @@ public class PageImpl extends CDOObjectImpl implements Page {
 	@SuppressWarnings("unchecked")
 	public EList<Form> getFormulaire() {
 		return (EList<Form>)eGet(MetawebmodelPackage.Literals.PAGE__FORMULAIRE, true);
+	}
+
+	@Override
+	/**
+	 * @generated NOT
+	 */
+	public void accepte(IVisiteur visiteur) {
+		visiteur.visite(this);
+		
 	}
 
 } //PageImpl

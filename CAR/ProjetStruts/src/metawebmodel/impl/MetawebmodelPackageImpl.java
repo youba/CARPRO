@@ -539,6 +539,15 @@ public class MetawebmodelPackageImpl extends EPackageImpl implements Metawebmode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCSS_Name() {
+		return (EAttribute)cssEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntityAtribute() {
 		return entityAtributeEClass;
 	}
@@ -741,6 +750,7 @@ public class MetawebmodelPackageImpl extends EPackageImpl implements Metawebmode
 
 		cssEClass = createEClass(CSS);
 		createEAttribute(cssEClass, CSS__CONTENT);
+		createEAttribute(cssEClass, CSS__NAME);
 
 		entityAtributeEClass = createEClass(ENTITY_ATRIBUTE);
 		createEAttribute(entityAtributeEClass, ENTITY_ATRIBUTE__NAME);
@@ -840,6 +850,7 @@ public class MetawebmodelPackageImpl extends EPackageImpl implements Metawebmode
 
 		initEClass(cssEClass, metawebmodel.CSS.class, "CSS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCSS_Content(), ecorePackage.getEString(), "content", null, 0, 1, metawebmodel.CSS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCSS_Name(), ecorePackage.getEString(), "name", null, 0, 1, metawebmodel.CSS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityAtributeEClass, EntityAtribute.class, "EntityAtribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityAtribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, EntityAtribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -21,6 +21,7 @@ import org.eclipse.emf.internal.cdo.CDOObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link metawebmodel.impl.CSSImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link metawebmodel.impl.CSSImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,6 +73,24 @@ public class CSSImpl extends CDOObjectImpl implements CSS {
 	 */
 	public void setContent(String newContent) {
 		eSet(MetawebmodelPackage.Literals.CSS__CONTENT, newContent);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return (String)eGet(MetawebmodelPackage.Literals.CSS__NAME, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		eSet(MetawebmodelPackage.Literals.CSS__NAME, newName);
 	}
 
 } //CSSImpl

@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 import org.eclipse.emf.common.util.EList;
@@ -44,4 +46,11 @@ public interface View extends CDOObject {
 	 */
 	EList<Page> getPages();
 
+	/**
+	 * 
+	 * @param v
+	 * @generated NOT
+	 */
+	public void accept(IVisiteur v);
+	
 } // View

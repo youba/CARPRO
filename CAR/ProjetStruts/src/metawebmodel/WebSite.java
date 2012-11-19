@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 import org.eclipse.emf.common.util.EList;
@@ -88,4 +90,10 @@ public interface WebSite extends CDOObject {
 	 */
 	void setName(String value);
 
+	/**
+	 * 
+	 * @param v
+	 * @generated NOT
+	 */
+	public void accept(IVisiteur v);
 } // WebSite

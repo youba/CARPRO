@@ -9,6 +9,7 @@ package metawebmodel.impl;
 import metawebmodel.MetawebmodelPackage;
 import metawebmodel.Page;
 import metawebmodel.View;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -67,6 +68,14 @@ public class ViewImpl extends CDOObjectImpl implements View {
 	@SuppressWarnings("unchecked")
 	public EList<Page> getPages() {
 		return (EList<Page>)eGet(MetawebmodelPackage.Literals.VIEW__PAGES, true);
+	}
+
+	@Override
+	/**
+	 * @generated NOT
+	 */
+	public void accept(IVisiteur v) {
+		v.visite(this);
 	}
 
 } //ViewImpl

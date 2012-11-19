@@ -505,13 +505,22 @@ public interface MetawebmodelPackage extends EPackage {
 	int CSS__CONTENT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CSS__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>CSS</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CSS_FEATURE_COUNT = 1;
+	int CSS_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link metawebmodel.impl.EntityAtributeImpl <em>Entity Atribute</em>}' class.
@@ -1037,6 +1046,17 @@ public interface MetawebmodelPackage extends EPackage {
 	EAttribute getCSS_Content();
 
 	/**
+	 * Returns the meta object for the attribute '{@link metawebmodel.CSS#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see metawebmodel.CSS#getName()
+	 * @see #getCSS()
+	 * @generated
+	 */
+	EAttribute getCSS_Name();
+
+	/**
 	 * Returns the meta object for class '{@link metawebmodel.EntityAtribute <em>Entity Atribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1509,6 +1529,14 @@ public interface MetawebmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CSS__CONTENT = eINSTANCE.getCSS_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CSS__NAME = eINSTANCE.getCSS_Name();
 
 		/**
 		 * The meta object literal for the '{@link metawebmodel.impl.EntityAtributeImpl <em>Entity Atribute</em>}' class.

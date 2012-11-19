@@ -10,11 +10,10 @@ import metawebmodel.MetawebmodelPackage;
 import metawebmodel.Model;
 import metawebmodel.View;
 import metawebmodel.WebSite;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 /**
@@ -100,4 +99,10 @@ public class WebSiteImpl extends CDOObjectImpl implements WebSite {
 		eSet(MetawebmodelPackage.Literals.WEB_SITE__NAME, newName);
 	}
 
+	/**@generated NOT
+	**/
+	public void accept(IVisiteur visiteur){
+		visiteur.visite(this);
+	}
+	
 } //WebSiteImpl

@@ -1,5 +1,14 @@
 package metawebmodel.tools;
 
+import java.io.File;
+
+import metawebmodel.WebSite;
+import metawebmodel.impl.WebSiteImpl;
+/**
+ * 
+ * @author marcgregoire
+ * @generated NOT
+ */
 public class Main {
 
 	/**
@@ -7,7 +16,12 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		WebSiteSerializer serializerWeb = new WebSiteSerializer();
+		File instanceWeb = new File("model/Website.xmi");
+		WebSiteImpl website = (WebSiteImpl) serializerWeb.load(instanceWeb);
+		IVisiteur visiteur  = new VisiteurWeb();
+		website.accept(visiteur);
 	}
 
 }
+

@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 import org.eclipse.emf.common.util.EList;
@@ -141,5 +143,12 @@ public interface Page extends CDOObject {
 	 * @generated
 	 */
 	EList<Form> getFormulaire();
+	
+	/**
+	 * 
+	 * @param visiteur
+	 * @generated NOT
+	 */
+	public void accepte(IVisiteur visiteur);
 
 } // Page
