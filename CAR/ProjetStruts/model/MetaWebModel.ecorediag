@@ -271,6 +271,10 @@
         <element xmi:type="ecore:EAttribute" href="MetaWebModel.ecore#//CSS/content"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_rJdGASXLEeKOEfhQFEP43Q"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_XRSnYDHBEeKQA43pPLva4g" type="2001">
+        <element xmi:type="ecore:EAttribute" href="MetaWebModel.ecore#//CSS/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XRSnYTHBEeKQA43pPLva4g"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_mIWjoiXLEeKOEfhQFEP43Q"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_mIWjoyXLEeKOEfhQFEP43Q"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_mIWjpCXLEeKOEfhQFEP43Q"/>
