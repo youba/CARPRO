@@ -1,0 +1,1 @@
+<%@ jet package = "metawebmodel.tools"  class="EntitiesGenerator"%>
