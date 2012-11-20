@@ -8,6 +8,7 @@ package metawebmodel.impl;
 
 import metawebmodel.Label;
 import metawebmodel.MetawebmodelPackage;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -72,6 +73,14 @@ public class LabelImpl extends CDOObjectImpl implements Label {
 	 */
 	public void setValue(String newValue) {
 		eSet(MetawebmodelPackage.Literals.LABEL__VALUE, newValue);
+	}
+
+	@Override
+	/**
+	 * @generated NOT
+	 */
+	public String accepte(IVisiteur visiteur) {
+		return visiteur.visite(this);
 	}
 
 } //LabelImpl

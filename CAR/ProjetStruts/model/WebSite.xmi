@@ -6,7 +6,16 @@
     </pages>
     <pages head="" name="inscription">
       <htmlContent htmlText="Ici contenu"/>
-      <formulaire/>
+      <formulaire>
+        <fields>
+          <input value="&quot;&quot;" inputType="TextArea" name="nom"/>
+          <label value="Nom"/>
+        </fields>
+        <fields>
+          <input value="Valider" name="Valider"/>
+        </fields>
+        <action name="AddUser"/>
+      </formulaire>
     </pages>
   </vues>
 </metawebmodel:WebSite>

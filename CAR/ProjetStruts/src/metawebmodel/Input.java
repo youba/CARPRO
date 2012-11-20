@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 /**
@@ -108,5 +110,10 @@ public interface Input extends CDOObject {
 	 * @generated
 	 */
 	void setName(String value);
+	
+	/**
+	 * @generated NOT
+	 */
+	public String accepte(IVisiteur visiteur );
 
 } // Input

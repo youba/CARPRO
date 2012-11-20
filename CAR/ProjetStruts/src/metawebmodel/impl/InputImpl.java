@@ -9,6 +9,7 @@ package metawebmodel.impl;
 import metawebmodel.Input;
 import metawebmodel.InputType;
 import metawebmodel.MetawebmodelPackage;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -111,6 +112,14 @@ public class InputImpl extends CDOObjectImpl implements Input {
 	 */
 	public void setName(String newName) {
 		eSet(MetawebmodelPackage.Literals.INPUT__NAME, newName);
+	}
+
+	@Override
+	/**
+	 * @generated NOT
+	 */
+	public String accepte(IVisiteur visiteur) {
+		return visiteur.visite(this);
 	}
 
 } //InputImpl

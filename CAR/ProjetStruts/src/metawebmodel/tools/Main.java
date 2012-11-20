@@ -19,7 +19,8 @@ public class Main {
 		WebSiteSerializer serializerWeb = new WebSiteSerializer();
 		File instanceWeb = new File("model/Website.xmi");
 		WebSiteImpl website = (WebSiteImpl) serializerWeb.load(instanceWeb);
-		IVisiteur visiteur  = new VisiteurWeb();
+		VisiteurWeb visiteur  = new VisiteurWeb();
+		visiteur.nom_site= website.getName();
 		website.accept(visiteur);
 	}
 

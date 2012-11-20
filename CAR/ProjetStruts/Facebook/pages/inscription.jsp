@@ -11,7 +11,13 @@
 </head>
 <body>
 Ici contenu
-<form></form>
+
+<html:form action = "AddUser">
+Nom:<html:textarea property="nom" size=" " maxlength=" " />
+<html:submit>Valider</html:submit>
+
+</html:form>
+
 
 </body>
 

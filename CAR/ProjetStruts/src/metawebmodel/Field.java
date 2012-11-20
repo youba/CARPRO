@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteur;
+
 import org.eclipse.emf.cdo.CDOObject;
 
 /**
@@ -79,4 +81,5 @@ public interface Field extends CDOObject {
 	 */
 	void setLabel(Label value);
 
+	public String accepte(IVisiteur visiteur);
 } // Field

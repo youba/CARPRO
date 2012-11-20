@@ -9,6 +9,7 @@ package metawebmodel.impl;
 import metawebmodel.Entity;
 import metawebmodel.EntityAtribute;
 import metawebmodel.MetawebmodelPackage;
+import metawebmodel.tools.IVisiteurModel;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -57,4 +58,13 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 		return (EList<EntityAtribute>)eGet(MetawebmodelPackage.Literals.ENTITY__ATRIBUTES, true);
 	}
 
+	@Override
+	/**
+	 * @generated NOT
+	 */
+	public void accepte(IVisiteurModel visiteur) {
+		visiteur.visite(this);		
+	}
+
+	
 } //EntityImpl

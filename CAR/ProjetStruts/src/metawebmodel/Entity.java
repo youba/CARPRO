@@ -6,6 +6,8 @@
  */
 package metawebmodel;
 
+import metawebmodel.tools.IVisiteurModel;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -41,4 +43,10 @@ public interface Entity extends DataType {
 	 */
 	EList<EntityAtribute> getAtributes();
 
+	/**
+	 * 
+	 * @param visiteur
+	 * @generated NOT
+	 */
+	public void accepte(IVisiteurModel visiteur);
 } // Entity

@@ -10,6 +10,7 @@ import metawebmodel.Field;
 import metawebmodel.Input;
 import metawebmodel.Label;
 import metawebmodel.MetawebmodelPackage;
+import metawebmodel.tools.IVisiteur;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -95,4 +96,7 @@ public class FieldImpl extends CDOObjectImpl implements Field {
 		eSet(MetawebmodelPackage.Literals.FIELD__LABEL, newLabel);
 	}
 
+	public String accepte(IVisiteur visiteur){
+		return visiteur.visite(this);
+	}
 } //FieldImpl

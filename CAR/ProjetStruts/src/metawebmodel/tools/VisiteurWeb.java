@@ -6,7 +6,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import metawebmodel.Content;
+import metawebmodel.Field;
 import metawebmodel.Form;
+import metawebmodel.Input;
+import metawebmodel.InputType;
+import metawebmodel.Label;
 import metawebmodel.Page;
 import metawebmodel.View;
 import metawebmodel.WebSite;
@@ -17,13 +21,15 @@ import metawebmodel.WebSite;
  */
 public class VisiteurWeb implements IVisiteur {
 
-	private String nom_site="";
+	public static String nom_site;
+	
 	@Override
 	public void visite(WebSite w) {
 		//Generer les package de vue
-		File racine = new File(w.getName());
+		File racine = new File(nom_site);
 		racine.mkdir();
-		this.nom_site=w.getName();
+		File webContent = new File(nom_site+"/WebContent");
+		webContent.mkdir();
 		for(int i=0; i<w.getVues().size();i++){
 			w.getVues().get(i).accept(this);
 		}
@@ -31,7 +37,7 @@ public class VisiteurWeb implements IVisiteur {
 
 	@Override
 	public void visite(View vue) {
-		File pages = new File(nom_site+"/pages");
+		File pages = new File(nom_site+"/WebContent/pages");
 		pages.mkdir();
 		for(int i =0; i<vue.getPages().size();i++){
 			vue.getPages().get(i).accepte(this);
@@ -79,11 +85,57 @@ public class VisiteurWeb implements IVisiteur {
 
 	@Override
 	public String visite(Form formulaire) {
-		return "<form></form>";
+		
+		// ajouter la creation des verificateur de formulaire ici
+		String retour = "\n<html:form action = \""+formulaire.getAction().getName()+"\">\n";
+		for(int i = 0; i<formulaire.getFields().size();i++)
+		{
+			retour=retour+formulaire.getFields().get(i).accepte(this)+"\n";
+		}
+		retour = retour + "\n</html:form>\n";
+		return retour;
 	}
 	
 	public String visite(Content contenu){
 		return contenu.getHtmlText();
+	}
+	
+	public String visite (Field champs){
+		String champsLabel="";
+		if(champs.getLabel()!=null)
+			champsLabel=champs.getLabel().accepte(this);
+		String rendu = champsLabel+champs.getInput().accepte(this);
+		
+		return rendu;
+	}
+
+	@Override
+	public String visite(Input entree) {
+		InputType atester = entree.getInputType();
+		if(atester.equals(InputType.TEXT_AREA))
+			return "<html:textarea property=\""+ entree.getName()+"\" size=\" \" maxlength=\" \" />";
+		else if(atester.equals(InputType.TEXT))
+			return "<html:text property=\""+ entree.getName()+"\" size=\" \" maxlength=\" \" />";
+		else if(atester.equals(InputType.CHECK_BOX))
+			return "<html:checkbox name=\""+entree.getName()+"\" value =\""+entree.getValue()+"\"/>";
+		else if(atester.equals(InputType.PASSWORD))
+			return "<html:password  name=\""+entree.getName()+"\" value =\""+entree.getValue()+"\"/>";
+		else if(atester.equals(InputType.RADIO_BUTTON))
+			return "<html:radio  name=\""+entree.getName()+"\" value =\""+entree.getValue()+"\"/>";
+		else if(atester.equals(InputType.RESET))
+			return "<html:reset  name=\""+entree.getName()+"\" value =\""+entree.getValue()+"\"/>";
+		else if(atester.equals(InputType.OPTION))
+			return "<html:option  name=\""+entree.getName()+"\" value =\""+entree.getValue()+"\"/>";
+		else if(atester.equals(InputType.SUBMIT))
+			return "<html:submit>"+ entree.getName()+"</html:submit>";
+		return "";
+		
+	}
+
+	@Override
+	public String visite(Label label) {
+		
+		return label.getValue()+":";
 	}
 	
 	
