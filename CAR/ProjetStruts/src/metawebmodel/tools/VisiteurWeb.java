@@ -73,7 +73,7 @@ public class VisiteurWeb implements IVisiteur {
 		//Ecriture dans le fichier jsp
 		PrintWriter ecri=null ;
 			try {
-				ecri = new PrintWriter(new FileWriter(nom_site+"/pages/"+page.getName()+".jsp"));
+				ecri = new PrintWriter(new FileWriter(nom_site+"/WebContent/pages/"+page.getName()+".jsp"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
