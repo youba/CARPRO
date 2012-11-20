@@ -6,8 +6,9 @@
  */
 package metawebmodel;
 
-import org.eclipse.emf.cdo.CDOObject;
+import metawebmodel.tools.IVisiteurModel;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -44,4 +45,10 @@ public interface Model extends CDOObject {
 	 */
 	EList<Entity> getEntities();
 
+	/**
+	 * 
+	 * @param visiteur
+	 * @generated NOT
+	 */
+	public void accepte(IVisiteurModel visiteur);
 } // Model

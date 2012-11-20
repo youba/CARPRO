@@ -33,6 +33,7 @@ public class VisiteurWeb implements IVisiteur {
 		for(int i=0; i<w.getVues().size();i++){
 			w.getVues().get(i).accept(this);
 		}
+		System.out.println("Vues gŽnŽrŽes");
 	}
 
 	@Override

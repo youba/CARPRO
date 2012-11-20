@@ -1,6 +1,7 @@
 package metawebmodel.tools;
 
 import metawebmodel.Entity;
+import metawebmodel.Model;
 
 /**
  * 
@@ -10,4 +11,6 @@ import metawebmodel.Entity;
 public interface IVisiteurModel {
 
 	public void visite(Entity entite);
+	public void visite(Model model);
+	
 }

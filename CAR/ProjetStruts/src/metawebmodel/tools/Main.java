@@ -22,6 +22,8 @@ public class Main {
 		VisiteurWeb visiteur  = new VisiteurWeb();
 		visiteur.nom_site= website.getName();
 		website.accept(visiteur);
+		VisiteurModel visiteurModel = new VisiteurModel();
+		website.getModels().get(0).accepte(visiteurModel);
 	}
 
 }

@@ -9,11 +9,10 @@ package metawebmodel.impl;
 import metawebmodel.Entity;
 import metawebmodel.MetawebmodelPackage;
 import metawebmodel.Model;
+import metawebmodel.tools.IVisiteurModel;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 /**
@@ -67,6 +66,13 @@ public class ModelImpl extends CDOObjectImpl implements Model {
 	@SuppressWarnings("unchecked")
 	public EList<Entity> getEntities() {
 		return (EList<Entity>)eGet(MetawebmodelPackage.Literals.MODEL__ENTITIES, true);
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	public void accepte(IVisiteurModel visiteur){
+		visiteur.visite(this);
 	}
 
 } //ModelImpl
