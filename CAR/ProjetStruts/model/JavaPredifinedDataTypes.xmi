@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<metawebmodel:PredifinedDataTypes xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metawebmodel="http://metawebmodel/1.0" xsi:schemaLocation="http://metawebmodel/1.0 MetaWebModel.ecore">
+  <types nom="String"/>
+  <types nom="int"/>
+</metawebmodel:PredifinedDataTypes>
