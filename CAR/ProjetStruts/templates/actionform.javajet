@@ -1,0 +1,42 @@
+<%@ jet package = "metawebmodel.tools"  class="ActionFormGenerator" imports ="metawebmodel.*"%>
+<% Form formulaire = (Form) argument; %> 
+package org.lip6.struts.actionForm;
+
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts.action.ActionErrors; 
+import org.apache.struts.action.ActionForm; 
+import org.apache.struts.action.ActionMapping; 
+import org.apache.struts.action.ActionMessage;
+
+public class <%= formulaire.getAction().getName() %>ValidationForm extends ActionForm {
+
+	<% for (int i =0; i<formulaire.getFields().size();i++){ 
+		if (!formulaire.getFields().get(i).getInput().getInputType().getName().equals("Submit")){ %>
+	private String <%= formulaire.getFields().get(i).getInput().getName() %>;
+		<% }}%>
+	<% for (int i =0; i<formulaire.getFields().size();i++){ 
+		if (!formulaire.getFields().get(i).getInput().getInputType().getName().equals("Submit")){ %>
+	public String get<%= formulaire.getFields().get(i).getInput().getName() %>(){
+		return this.<%= formulaire.getFields().get(i).getInput().getName() %>;
+	}
+	
+	public void set<%= formulaire.getFields().get(i).getInput().getName() %>(String <%= formulaire.getFields().get(i).getInput().getName() %>){
+		this.<%= formulaire.getFields().get(i).getInput().getName() %>=<%= formulaire.getFields().get(i).getInput().getName() %>;
+	}
+		<% }}%>
+	
+	public void reset (ActionMapping mapping, HttpServletRequest request){<% for (int i =0; i<formulaire.getFields().size();i++){ if (!formulaire.getFields().get(i).getInput().getInputType().getName().equals("Submit")){ %>
+			this.<%= formulaire.getFields().get(i).getInput().getName() %> = null;<% } }%>
+	}
+	
+	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request){
+		ActionErrors errors = new ActionErrors();
+		<% for (int i =0; i<formulaire.getFields().size();i++)
+		{ if (!formulaire.getFields().get(i).getInput().getInputType().getName().equals("Submit")){ %>
+		if(this.get<%= formulaire.getFields().get(i).getInput().getName() %>() == null || this.get<%= formulaire.getFields().get(i).getInput().getName() %>().length < 1){
+			errors.add("<%= formulaire.getFields().get(i).getInput().getName() %>",new ActionMessage("creation.fn.error.required"));
+		}<% }}%>
+		return errors;
+	}
+	
+}

@@ -17,7 +17,6 @@ public class VisiteurModel implements IVisiteurModel {
 	@Override
 	public void visite(Entity entite) {
 		if(!entite.getClass().getSimpleName().contains("DataType")){
-			System.out.println(entite.getClass().getName());
 			EntitiesGenerator classejava = new EntitiesGenerator();
 			FileWriter output; BufferedWriter writer;
 			System.out.println("Creation de la classe metier"); try {
@@ -35,6 +34,7 @@ public class VisiteurModel implements IVisiteurModel {
 		src.mkdir();
 		File domain = new File(VisiteurWeb.nom_site+"/Java Resources: src/org.lip6.struts.domain");
 		domain.mkdir();
+				
 		System.out.println("Model généré");
 		for(int i=0;i<model.getEntities().size();i++){
 			model.getEntities().get(i).accepte(this);

@@ -21,6 +21,8 @@ public class Main {
 		WebSiteImpl website = (WebSiteImpl) serializerWeb.load(instanceWeb);
 		VisiteurWeb visiteur  = new VisiteurWeb();
 		visiteur.nom_site= website.getName();
+		File actionFo = new File(VisiteurWeb.nom_site+"/Java Resources: src/org.lip6.struts.actionForm");
+		actionFo.mkdir();
 		website.accept(visiteur);
 		VisiteurModel visiteurModel = new VisiteurModel();
 		website.getModels().get(0).accepte(visiteurModel);

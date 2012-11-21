@@ -1,5 +1,6 @@
 package metawebmodel.tools;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -89,6 +90,18 @@ public class VisiteurWeb implements IVisiteur {
 		
 		// ajouter la creation des verificateur de formulaire ici
 		String retour = "\n<html:form action = \""+formulaire.getAction().getName()+"\">\n";
+		//Creation du validateur
+		ActionFormGenerator classejava = new ActionFormGenerator();
+		FileWriter output; BufferedWriter writer;
+		System.out.println("Creation de la classe metier"); 
+		//formulaire.getFields().get(0).getInput().getInputType().getName()
+		try {
+			output = new FileWriter(VisiteurWeb.nom_site+"/Java Resources: src/org.lip6.struts.actionForm/"+formulaire.getAction().getName()+"ValidationForm.java"); 
+			writer = new BufferedWriter(output);
+			writer.write(classejava.generate(formulaire));
+			writer.close(); } catch (IOException e) {
+				e.printStackTrace();
+			}
 		for(int i = 0; i<formulaire.getFields().size();i++)
 		{
 			retour=retour+formulaire.getFields().get(i).accepte(this)+"\n";
